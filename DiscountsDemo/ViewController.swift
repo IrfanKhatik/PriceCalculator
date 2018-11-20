@@ -32,8 +32,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func calculateDiscountedAmount(_ sender: Any) {
-        guard let text = txtBillAmount.text, !text.isEmpty, 4 < text.count else {
-            // Bill amount not added or invalid amount added more than 9999
+        pickerType.isHidden = true
+        guard let text = txtBillAmount.text, !text.isEmpty else {
+            // Bill amount not added
             return
         }
         
@@ -43,13 +44,14 @@ class ViewController: UIViewController {
         let priceCalculator = PriceCalculator()
         let discountedAmount = priceCalculator.calculateTotalPrice(for: user, billAmount: (Int(text) ?? 0), purchaseType: purchase)
         lblBillAmount.text = text
-        lblDiscountAmount.text = String((Int(text) ?? 0) - discountedAmount)
+        lblDiscountAmount.text = "-" + String((Int(text) ?? 0) - discountedAmount)
         lblDiscountedAmount.text = String(discountedAmount)
     }
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        pickerType.isHidden = true
         if textField != txtBillAmount {
             txtBillAmount.resignFirstResponder()
         }
