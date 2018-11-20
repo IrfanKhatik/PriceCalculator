@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0123FF3A21A3FD9B0034E505 /* PriceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123FF3921A3FD9B0034E505 /* PriceCalculator.swift */; };
 		01DFB1EE21A3F01F00B2004B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DFB1ED21A3F01F00B2004B /* AppDelegate.swift */; };
 		01DFB1F021A3F01F00B2004B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DFB1EF21A3F01F00B2004B /* ViewController.swift */; };
 		01DFB1F321A3F01F00B2004B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DFB1F121A3F01F00B2004B /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0123FF3921A3FD9B0034E505 /* PriceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCalculator.swift; sourceTree = "<group>"; };
 		01DFB1EA21A3F01F00B2004B /* DiscountsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DFB1ED21A3F01F00B2004B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01DFB1EF21A3F01F00B2004B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				01DFB1ED21A3F01F00B2004B /* AppDelegate.swift */,
 				01DFB1EF21A3F01F00B2004B /* ViewController.swift */,
+				01DFB20F21A3F2AF00B2004B /* PriceCalculator */,
 				01DFB1F121A3F01F00B2004B /* Main.storyboard */,
 				01DFB1F421A3F02000B2004B /* Assets.xcassets */,
 				01DFB1F621A3F02000B2004B /* LaunchScreen.storyboard */,
@@ -94,6 +97,14 @@
 				01DFB20421A3F02000B2004B /* Info.plist */,
 			);
 			path = DiscountsDemoTests;
+			sourceTree = "<group>";
+		};
+		01DFB20F21A3F2AF00B2004B /* PriceCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				0123FF3921A3FD9B0034E505 /* PriceCalculator.swift */,
+			);
+			path = PriceCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0123FF3A21A3FD9B0034E505 /* PriceCalculator.swift in Sources */,
 				01DFB1F021A3F01F00B2004B /* ViewController.swift in Sources */,
 				01DFB1EE21A3F01F00B2004B /* AppDelegate.swift in Sources */,
 			);

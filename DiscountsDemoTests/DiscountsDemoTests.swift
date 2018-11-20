@@ -19,16 +19,46 @@ class DiscountsDemoTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testNegativeAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .Other, billAmount: -1000, purchaseType: .Other)
+        XCTAssertEqual(-1000, discountedAmount)
+    }
+    
+    func testHundredsAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .Other, billAmount: 990, purchaseType: .Other)
+        XCTAssertEqual(945, discountedAmount)
+    }
+    
+    func testThousandsAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .Other, billAmount: 1990, purchaseType: .Other)
+        XCTAssertEqual(1895, discountedAmount)
+    }
+    
+    func testEmployeeAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .Employee, billAmount: 1000, purchaseType: .Other)
+        XCTAssertEqual(700, discountedAmount)
+    }
+    
+    func testAffiliatedCustomerAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .AffiliatedCustomer, billAmount: 1000, purchaseType: .Other)
+        XCTAssertEqual(900, discountedAmount)
+    }
+    
+    func testLongTimeCustomerAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .LongTimeCustomer, billAmount: 1000, purchaseType: .Other)
+        XCTAssertEqual(950, discountedAmount)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testOutOfRangeAmount() {
+        let calculator = PriceCalculator()
+        let discountedAmount = calculator.calculateTotalPrice(for: .Other, billAmount: 10000, purchaseType: .Other)
+        XCTAssertEqual(10000, discountedAmount)
     }
 
 }
